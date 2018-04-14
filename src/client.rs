@@ -34,15 +34,9 @@ impl GroupmeClient {
             .post(&format!("{}/bots/post", self.path))
             .json(&body)
             .send()?;
-        if response.status() == reqwest::StatusCode::NotFound {
-            return Err(GroupmeError::BotNotFound);
-        }
 
         if response.status() != reqwest::StatusCode::Accepted {
-            return Err(GroupmeError::BadHeaderError(format!(
-                "Wrong header response: {:?}",
-                response.status()
-            )));
+            return Err(GroupmeError::BadHeaderError(response.status()));
         }
 
         Ok(())
@@ -88,10 +82,7 @@ impl GroupmeClient {
             return Err(GroupmeError::Unauthorized);
         }
         if response.status() != reqwest::StatusCode::Created {
-            return Err(GroupmeError::BadHeaderError(format!(
-                "Wrong header response: {:?}",
-                response.status()
-            )));
+            return Err(GroupmeError::BadHeaderError(response.status()));
         }
 
         let response_text = response.text()?;
@@ -100,7 +91,7 @@ impl GroupmeClient {
         let bot_id = if let Value::String(ref bot_id) = response_json["response"]["bot"]["bot_id"] {
             bot_id.clone()
         } else {
-            return Err(GroupmeError::BotNotFound);
+            return Err(GroupmeError::GenericError);
         };
         Ok(bot_id)
     }
@@ -117,10 +108,7 @@ impl GroupmeClient {
             return Err(GroupmeError::Unauthorized);
         }
         if response.status() != reqwest::StatusCode::Ok {
-            return Err(GroupmeError::BadHeaderError(format!(
-                "Wrong header response: {:?}",
-                response.status()
-            )));
+            return Err(GroupmeError::BadHeaderError(response.status()));
         }
 
         Ok(())

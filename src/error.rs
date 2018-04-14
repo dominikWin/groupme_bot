@@ -3,12 +3,12 @@ use serde_json;
 
 #[derive(Debug)]
 pub enum GroupmeError {
-    BotNotFound,
     NoTokenError,
     Unauthorized,
-    BadHeaderError(String),
+    BadHeaderError(reqwest::StatusCode),
     ReqwestError(reqwest::Error),
     SerdeError(serde_json::Error),
+    GenericError,
 }
 
 impl From<reqwest::Error> for GroupmeError {
