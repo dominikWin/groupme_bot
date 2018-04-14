@@ -1,5 +1,5 @@
 [package]
-name = "groupme-bot"
+name = "groupme_bot"
 version = "0.1.0"
 authors = ["Dominik Winecki <dominikwinecki@gmail.com>"]
 
