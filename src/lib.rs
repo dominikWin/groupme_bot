@@ -2,8 +2,10 @@ extern crate reqwest;
 extern crate serde;
 extern crate serde_json;
 
-pub mod groupme;
-pub mod bot;
+pub use self::groupme::Groupme;
+pub use self::bot::Bot;
+pub use self::error::GroupmeError;
 
-pub use groupme::Groupme;
-pub use bot::Bot;
+mod groupme;
+mod bot;
+mod error;
