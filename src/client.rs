@@ -104,4 +104,25 @@ impl GroupmeClient {
         };
         Ok(bot_id)
     }
+
+    pub(super) fn destroy(&self, bot_id: &str, token: &str) -> Result<(), GroupmeError> {
+        let mut body = HashMap::new();
+        body.insert("bot_id", bot_id.to_string());
+        let response = self.client
+            .post(&format!("{}/bots/destroy?token={}", self.path, token))
+            .json(&body)
+            .send()?;
+
+        if response.status() == reqwest::StatusCode::Unauthorized {
+            return Err(GroupmeError::Unauthorized);
+        }
+        if response.status() != reqwest::StatusCode::Ok {
+            return Err(GroupmeError::BadHeaderError(format!(
+                "Wrong header response: {:?}",
+                response.status()
+            )));
+        }
+
+        Ok(())
+    }
 }

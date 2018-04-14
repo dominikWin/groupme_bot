@@ -32,4 +32,12 @@ impl Groupme {
         }
         Err(GroupmeError::NoTokenError)
     }
+
+    pub fn destroy(&self, bot: Bot) -> Result<(), GroupmeError> {
+        let bot_id = bot.bot_id();
+        if let Some(ref token) = self.token {
+            return self.client.destroy(bot_id, &token);
+        }
+        Err(GroupmeError::NoTokenError)
+    }
 }
