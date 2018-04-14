@@ -20,4 +20,8 @@ impl Bot {
         gm_client.post(&self.bot_id, text, Some(picture_url))?;
         Ok(())
     }
+
+    pub fn bot_id(&self) -> &str {
+        &self.bot_id
+    }
 }
