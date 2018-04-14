@@ -1,6 +1,7 @@
-use groupme::GroupmeClient;
-use std::rc::Rc;
+use client::GroupmeClient;
 use error::GroupmeError;
+
+use std::rc::Rc;
 
 pub struct Bot {
     pub(crate) bot_id: String,

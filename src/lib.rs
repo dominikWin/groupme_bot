@@ -9,3 +9,4 @@ pub use self::error::GroupmeError;
 mod groupme;
 mod bot;
 mod error;
+mod client;
