@@ -2,6 +2,9 @@
 name = "groupme_bot"
 version = "0.1.0"
 authors = ["Dominik Winecki <dominikwinecki@gmail.com>"]
+repository = "https://github.com/dominikWin/groupme_bot.git"
+homepage = "https://github.com/dominikWin/groupme_bot.git"
+description = "Rust library wrapper for Groupme bots API."
 
 [dependencies]
 "reqwest" = "~0.8"
