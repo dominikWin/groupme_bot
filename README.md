@@ -1,5 +1,7 @@
 # groupme_bot
 
+[![crates.io](https://img.shields.io/crates/v/groupme_bot.svg)](https://crates.io/crates/groupme_bot)
+
 [Rust](https://www.rust-lang.org/) library for the [Groupme](https://groupme.com) Bots API.
 
 The library allows for Rust programms to create, destroy, and post messages
