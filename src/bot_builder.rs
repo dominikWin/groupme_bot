@@ -8,7 +8,7 @@ use std::rc::Rc;
 ///
 /// # Examples
 ///
-/// ```
+/// ```rust,no_run
 /// use groupme_bot::{Groupme, Bot};
 ///
 /// let groupme: Groupme = Groupme::new(Some("Required API Token"));

@@ -15,7 +15,7 @@ impl Bot {
     ///
     /// # Examples
     ///
-    /// ```
+    /// ```rust,no_run
     /// use groupme_bot::{Groupme, Bot};
     ///
     /// let groupme = Groupme::new(None);
@@ -35,7 +35,7 @@ impl Bot {
     ///
     /// # Examples
     ///
-    /// ```
+    /// ```rust,no_run
     /// use groupme_bot::{Groupme, Bot};
     ///
     /// let groupme = Groupme::new(None);

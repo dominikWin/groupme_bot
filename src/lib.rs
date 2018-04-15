@@ -10,8 +10,8 @@
 //!
 //! ## Example
 //!
-//! ```rust
-//! use groupme::{Groupme, Bot}
+//! ```rust,no_run
+//! use groupme_bot::{Groupme, Bot};
 //!
 //! let groupme = Groupme::new(None);
 //! let bot = groupme.bot("Secret bot_id");

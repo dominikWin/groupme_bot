@@ -20,12 +20,12 @@ impl Groupme {
     ///
     /// # Examples
     ///
-    /// ```
+    /// ```rust,no_run
     /// use groupme_bot::Groupme;
     ///
-    /// let groupme: Groupme = Groupme(None);
+    /// let groupme: Groupme = Groupme::new(None);
     ///
-    /// let groupme: Groupme = Groupme(Some("Secret API Token"));
+    /// let groupme: Groupme = Groupme::new(Some("Secret API Token"));
     /// ```
     pub fn new(token: Option<&str>) -> Groupme {
         Groupme {
@@ -38,10 +38,10 @@ impl Groupme {
     ///
     /// # Examples
     ///
-    /// ```
+    /// ```rust,no_run
     /// use groupme_bot::{Groupme, Bot};
     ///
-    /// let groupme: Groupme = Groupme(None);
+    /// let groupme: Groupme = Groupme::new(None);
     ///
     /// let bot: Bot = groupme.bot("Secret bot_id");
     /// ```
@@ -65,7 +65,7 @@ impl Groupme {
     ///
     /// # Examples
     ///
-    /// ```
+    /// ```rust,no_run
     /// use groupme_bot::{Groupme, Bot};
     ///
     /// let groupme: Groupme = Groupme::new(Some("Required API Token"));
@@ -90,10 +90,10 @@ impl Groupme {
     ///
     /// # Examples
     ///
-    /// ```
+    /// ```rust,no_run
     /// use groupme_bot::{Groupme, Bot};
     ///
-    /// let groupme: Groupme = Groupme(None);
+    /// let groupme: Groupme = Groupme::new(None);
     ///
     /// let bot: Bot = groupme.bot("Secret bot_id");
     ///
