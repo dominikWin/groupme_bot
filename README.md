@@ -17,5 +17,5 @@ use groupme_bot::{Groupme, Bot};
 let groupme = Groupme::new(None);
 let bot = groupme.bot("Secret bot_id");
 
-bot.post("Hello, world!");
+bot.post("Hello, world!").unwrap();
 ```
