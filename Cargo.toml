@@ -1,7 +1,8 @@
 [package]
 name = "groupme_bot"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Dominik Winecki <dominikwinecki@gmail.com>"]
+readme = "README.md"
 repository = "https://github.com/dominikWin/groupme_bot.git"
 homepage = "https://github.com/dominikWin/groupme_bot.git"
 description = "Rust library wrapper for Groupme bots API."
