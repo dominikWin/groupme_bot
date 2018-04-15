@@ -4,6 +4,7 @@ use reqwest::{self, Client};
 use serde_json;
 use std::collections::HashMap;
 
+#[derive(Debug)]
 pub(super) struct GroupmeClient {
     path: String,
     client: Client,
