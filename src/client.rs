@@ -37,6 +37,9 @@ impl GroupmeClient {
             .send()?;
 
         if response.status() != reqwest::StatusCode::Accepted {
+            if response.status() == reqwest::StatusCode::NotFound {
+                return Err(GroupmeError::AuthError);
+            }
             return Err(GroupmeError::BadHeaderError(response.status()));
         }
 
@@ -80,7 +83,7 @@ impl GroupmeClient {
             .json(&body)
             .send()?;
         if response.status() == reqwest::StatusCode::Unauthorized {
-            return Err(GroupmeError::Unauthorized);
+            return Err(GroupmeError::AuthError);
         }
         if response.status() != reqwest::StatusCode::Created {
             return Err(GroupmeError::BadHeaderError(response.status()));
@@ -106,7 +109,7 @@ impl GroupmeClient {
             .send()?;
 
         if response.status() == reqwest::StatusCode::Unauthorized {
-            return Err(GroupmeError::Unauthorized);
+            return Err(GroupmeError::AuthError);
         }
         if response.status() != reqwest::StatusCode::Ok {
             return Err(GroupmeError::BadHeaderError(response.status()));

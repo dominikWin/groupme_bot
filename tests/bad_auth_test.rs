@@ -12,7 +12,7 @@ fn test_unauthorized_post() {
     let error = response.unwrap_err();
 
     match error {
-        GroupmeError::BadHeaderError(_) => {}
+        GroupmeError::AuthError => {}
         _ => panic!("Wrong error type returned"),
     }
 }
@@ -27,7 +27,7 @@ fn test_unauthorized_post_image() {
     let error = response.unwrap_err();
 
     match error {
-        GroupmeError::BadHeaderError(_) => {}
+        GroupmeError::AuthError => {}
         _ => panic!("Wrong error type returned"),
     }
 }

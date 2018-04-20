@@ -9,10 +9,11 @@ pub enum GroupmeError {
     /// When managing bots (creating or deleting) make sure to provide the
     /// `Groupme` a valid token.
     NoTokenError,
-    /// Any request that caused the API to return an Unauthorized header.
+    /// Any request that caused the API to return a header caused by bad
+    /// authentication with the Groupme API.
     ///
-    /// This is usually caused by an invalid API token.
-    Unauthorized,
+    /// This is usually caused by an invalid API token or bad bot_id.
+    AuthError,
     /// The API returned an unexpected HTTP header.
     ///
     /// This is usually caused by not defining a proper bot_id or group_id.

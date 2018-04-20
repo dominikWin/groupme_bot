@@ -15,7 +15,7 @@ impl Bot {
     ///
     /// # Errors
     ///
-    /// Returns an `Err(GroupmeError::BadHeaderError(reqwest::StatusCode::NotFound))`
+    /// Returns an `Err(GroupmeError::AuthError)`
     /// if the bot_id is not found.
     ///
     /// # Examples
@@ -37,6 +37,11 @@ impl Bot {
     /// Causes the bot to post an image and message.
     ///
     /// Groupme will only accept image urls from their [Image Service](https://dev.groupme.com/docs/image_service).
+    ///
+    /// # Errors
+    ///
+    /// Returns an `Err(GroupmeError::AuthError)`
+    /// if the bot_id is not found.
     ///
     /// # Examples
     ///
