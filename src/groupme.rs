@@ -61,6 +61,8 @@ impl Groupme {
     /// curl https://api.groupme.com/v3/groups?token=<token>
     /// ```
     ///
+    /// # Errors
+    ///
     /// Will return a `GroupmeError::NoTokenError` if there is no provided token.
     ///
     /// # Examples
@@ -85,6 +87,8 @@ impl Groupme {
     }
 
     /// Destroys a bot and removes it from its group.
+    ///
+    /// # Errors
     ///
     /// Will return a `GroupmeError::NoTokenError` if there is no provided token.
     ///
