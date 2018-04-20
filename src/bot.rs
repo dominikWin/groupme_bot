@@ -13,6 +13,11 @@ pub struct Bot {
 impl Bot {
     /// Causes the bot to post a new message.
     ///
+    /// # Errors
+    ///
+    /// Returns an `Err(GroupmeError::BadHeaderError(reqwest::StatusCode::NotFound))`
+    /// if the bot_id is not found.
+    ///
     /// # Examples
     ///
     /// ```rust,no_run
