@@ -93,7 +93,7 @@ impl Groupme {
     /// ```rust,no_run
     /// use groupme_bot::{Groupme, Bot};
     ///
-    /// let groupme: Groupme = Groupme::new(None);
+    /// let groupme: Groupme = Groupme::new(Some("Required API Token"));
     ///
     /// let bot: Bot = groupme.bot("Secret bot_id");
     ///
